@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<!-- 4  Разместим фрагменты по основной активити и создадим разметку
-  для альбомной ориентации - layout-land -->
-
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_200"
+    android:background="@color/black"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -21,6 +17,30 @@
         android:textColor="@color/white"
         android:textSize="30sp"
         android:textStyle="bold" />
+
+<!--    <androidx.fragment.app.FragmentContainerView-->
+<!--        android:id="@+id/note1"-->
+<!--        android:name="com.example.fragmentsnotebook2021.Fragment1"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content" />-->
+
+<!--    <androidx.fragment.app.FragmentContainerView-->
+<!--        android:id="@+id/note2"-->
+<!--        android:name="com.example.fragmentsnotebook2021.Fragment1"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content" />-->
+
+<!--    <androidx.fragment.app.FragmentContainerView-->
+<!--        android:id="@+id/note3"-->
+<!--        android:name="com.example.fragmentsnotebook2021.Fragment1"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content" />-->
+
+<!--    <androidx.fragment.app.FragmentContainerView-->
+<!--        android:id="@+id/note4"-->
+<!--        android:name="com.example.fragmentsnotebook2021.Fragment1"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content" />-->
 
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -36,7 +56,7 @@
             android:name="com.example.fragmentsnotebook2021.Fragment1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:layout="@layout/fragment1" /> <!--отображение в режиме дизайна-->
+            tools:layout="@layout/fragment1" />
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragment2"
