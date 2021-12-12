@@ -52,14 +52,14 @@
         tools:context=".MainActivity">
 
         <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragment1"
+            android:id="@+id/fragment1_container"
             android:name="com.example.fragmentsnotebook2021.Fragment1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:layout="@layout/fragment1" />
 
         <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragment2"
+            android:id="@+id/fragment2_container"
             android:name="com.example.fragmentsnotebook2021.Fragment2"
             android:layout_width="match_parent"
             android:layout_height="0dp"

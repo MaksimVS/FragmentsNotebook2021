@@ -31,19 +31,13 @@
         android:orientation="vertical"
         tools:context=".MainActivity">
 
+        <!-- создадим контэйнер для фрагмента1 -->
         <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragment1"
+            android:id="@+id/fragment1_container"
             android:name="com.example.fragmentsnotebook2021.Fragment1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             tools:layout="@layout/fragment1" /> <!--отображение в режиме дизайна-->
 
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragment2"
-            android:name="com.example.fragmentsnotebook2021.Fragment2"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            tools:layout="@layout/fragment2" />
     </LinearLayout>
 </LinearLayout>

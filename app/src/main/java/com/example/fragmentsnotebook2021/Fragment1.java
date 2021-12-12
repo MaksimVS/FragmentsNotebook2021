@@ -1,6 +1,8 @@
 package com.example.fragmentsnotebook2021;
 
 import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +17,21 @@ import androidx.fragment.app.Fragment;
 public class Fragment1 extends Fragment implements View.OnClickListener {
 
     /*  3  Подключаем разметку (из fragment1) к фрагменту (Fragment1) */
+
+//    protected Fragment1(Parcel in) {
+//    }
+//
+//    public static final Creator<Fragment1> CREATOR = new Creator<Fragment1>() {
+//        @Override
+//        public Fragment1 createFromParcel(Parcel in) {
+//            return new Fragment1(in);
+//        }
+//
+//        @Override
+//        public Fragment1[] newArray(int size) {
+//            return new Fragment1[size];
+//        }
+//    };
 
     @Nullable
     @Override
@@ -38,6 +55,7 @@ public class Fragment1 extends Fragment implements View.OnClickListener {
         int buttonIndex = translateIdToIndex(view.getId()); /*  8 Временный код для получения индекса нажатой кнопки*/
 
         OnSelectedButtonListener listener = (OnSelectedButtonListener) getActivity();
+        assert listener != null;
         listener.onButtonSelected(buttonIndex); /*  15 получаем доступ к слушателю активности*/
 
 
@@ -61,6 +79,15 @@ public class Fragment1 extends Fragment implements View.OnClickListener {
         }
         return index;
     }
+
+//    @Override
+//    public int describeContents() {
+//        return 0;
+//    }
+//
+//    @Override
+//    public void writeToParcel(Parcel dest, int flags) {
+//    }
 
     /*  9 Создаем интерфейс */
     public interface OnSelectedButtonListener {
