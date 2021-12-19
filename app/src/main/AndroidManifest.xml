@@ -18,6 +18,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.example.fragmentsnotebook2021.SecondActivity"
+            android:label="@string/app_name"
+            android:parentActivityName="com.example.fragmentsnotebook2021.MainActivity">
+        </activity>
     </application>
+
 
 </manifest>

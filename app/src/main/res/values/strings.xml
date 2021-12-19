@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">
-       <item>one</item>
-       <item>two</item>
-       <item>three</item>
+    <string name="app_name">FragmentsNotebook2021</string>
+    <string name="app_name2">
+        <item>заметка один</item>
+        <item>заметка два</item>
+        <item>заметка три</item>
     </string>
 </resources>
