@@ -13,6 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import java.util.zip.Inflater;
+
 public class Fragment1 extends Fragment implements View.OnClickListener {
 
     @Nullable
@@ -39,10 +41,6 @@ public class Fragment1 extends Fragment implements View.OnClickListener {
         OnSelectedButtonListener listener = (OnSelectedButtonListener) getActivity();
         assert listener != null;
         listener.onButtonSelected(buttonIndex);
-
-
-//        Toast.makeText(getActivity(), "Вы нажали на кнопку", /* 5 заглушка в виде всплывающего сообщения */
-//                Toast.LENGTH_SHORT).show();
     }
 
     int translateIdToIndex(int id) {

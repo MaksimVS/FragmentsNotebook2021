@@ -9,20 +9,10 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         tools:context=".MainActivity">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:gravity="center"
-            android:text="Список"
-            android:textColor="@color/white"
-            android:textSize="30sp"
-            android:textStyle="bold" />
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragment1_container"
