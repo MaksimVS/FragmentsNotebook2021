@@ -8,7 +8,6 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <!-- создадим контэйнер для фрагмента2 -->
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment2_container"
         android:name="com.example.fragmentsnotebook2021.Fragment2"
