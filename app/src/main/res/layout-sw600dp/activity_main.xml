@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_200"
+    android:background="@color/black"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -30,8 +28,15 @@
             android:id="@+id/fragment1_container"
             android:name="com.example.fragmentsnotebook2021.Fragment1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             tools:layout="@layout/fragment1" />
 
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragment2_container"
+            android:name="com.example.fragmentsnotebook2021.Fragment2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            tools:layout="@layout/fragment2" />
     </LinearLayout>
 </LinearLayout>
