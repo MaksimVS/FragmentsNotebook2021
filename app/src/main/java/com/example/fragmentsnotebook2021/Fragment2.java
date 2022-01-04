@@ -1,7 +1,10 @@
 package com.example.fragmentsnotebook2021;
 
 import android.os.Bundle;
+import android.os.Parcel;
 import android.os.Parcelable;
+import android.util.EventLogTags;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,20 +18,32 @@ import androidx.fragment.app.Fragment;
 
 public class Fragment2 extends Fragment {
 
-    private TextView InfoTextView;
-    private String[] DescriptionArray;
+//    public static Fragment2 newInstance (){
+//        Fragment2 fragment = new Fragment2();
+//        Bundle args = new Bundle();
+//        args.putParcelable(ARGS_KEY, );
+//        fragment.setArguments(args);
+//        return fragment;
+//    }
+
+    TextView InfoTextView;
+    String[] DescriptionArray;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment2, container, false);
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment2, container, false);
+    }
 
-        InfoTextView = (TextView) rootView.findViewById(R.id.textViewDescription);
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
+        InfoTextView = (TextView) view.findViewById(R.id.textViewDescription);
         DescriptionArray = getResources().getStringArray(R.array.notes);
-        return rootView;
     }
 
     public void setDescription(int buttonIndex) {
+
         String Description = DescriptionArray[buttonIndex];
         InfoTextView.setText(Description);
 
