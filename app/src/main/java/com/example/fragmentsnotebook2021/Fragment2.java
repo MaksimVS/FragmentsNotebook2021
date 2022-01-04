@@ -17,14 +17,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 public class Fragment2 extends Fragment {
-
-//    public static Fragment2 newInstance (){
-//        Fragment2 fragment = new Fragment2();
-//        Bundle args = new Bundle();
-//        args.putParcelable(ARGS_KEY, );
-//        fragment.setArguments(args);
-//        return fragment;
-//    }
+    static final String ARG_INDEX_DESCRIPTION = "indexDescription";
 
     TextView InfoTextView;
     String[] DescriptionArray;
@@ -37,16 +30,19 @@ public class Fragment2 extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        InfoTextView = (TextView) view.findViewById(R.id.textViewDescription);
-        DescriptionArray = getResources().getStringArray(R.array.notes);
+        Bundle arguments = getArguments();
+        if (arguments != null) {
+            int buttonIndex = arguments.getInt(ARG_INDEX_DESCRIPTION);
+            InfoTextView = (TextView) view.findViewById(R.id.textViewDescription);
+            DescriptionArray = getResources().getStringArray(R.array.notes);
+            setDescription(buttonIndex);
+        }
     }
 
     public void setDescription(int buttonIndex) {
 
         String Description = DescriptionArray[buttonIndex];
         InfoTextView.setText(Description);
-
         switch (buttonIndex) {
             case 1:
                 Toast.makeText(getActivity(), "Вы нажали на кнопку 1",
@@ -65,5 +61,14 @@ public class Fragment2 extends Fragment {
                 break;
         }
     }
+
+    public static Fragment2 newInstance(int buttonIndex) {
+        Fragment2 F2 = new Fragment2();
+        Bundle args = new Bundle();
+        args.putInt(ARG_INDEX_DESCRIPTION, buttonIndex);
+        F2.setArguments(args);
+        return F2;
+    }
+
 }
 

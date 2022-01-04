@@ -12,7 +12,7 @@ import javax.security.auth.Destroyable;
 
 public class MainActivity extends AppCompatActivity implements Fragment1.OnSelectedButtonListener {
 
-    private static final String ARGS_KEY = "ARGS_KEY";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,22 +22,25 @@ public class MainActivity extends AppCompatActivity implements Fragment1.OnSelec
 
     @Override
     public void onButtonSelected(int buttonIndex) {
-        Fragment2 fragment2 = new Fragment2();
 
-        if (getResources().getConfiguration().orientation != Configuration.ORIENTATION_LANDSCAPE) {
-            getSupportFragmentManager()
+        Fragment2 fragment2 = Fragment2.newInstance(buttonIndex);
+       // Fragment1 fragment1 = new Fragment1();
+
+        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+           getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.fragment1_container, fragment2)
+              //      .replace(R.id.fragment1_container, fragment1)
+                    .replace(R.id.fragment2_container, fragment2)
                     .addToBackStack(null)
                     .commit();
         } else {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.fragment2_container, fragment2)
+                    .replace(R.id.fragment1_container, fragment2)
                     .addToBackStack(null)
                     .commit();
         }
 
-  //      fragment2.setDescription(buttonIndex);
+
     }
 }

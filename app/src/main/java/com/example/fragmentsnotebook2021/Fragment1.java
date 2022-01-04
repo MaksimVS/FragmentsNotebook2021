@@ -17,20 +17,24 @@ import java.util.zip.Inflater;
 
 public class Fragment1 extends Fragment implements View.OnClickListener {
 
-    @Nullable
+    static final String ARG_INDEX_BUTTON = "indexButton";
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment1, container, false);
+        return inflater.inflate(R.layout.fragment1, container, false);
+    }
 
-        Button button1 = (Button) rootView.findViewById(R.id.button1);
-        Button button2 = (Button) rootView.findViewById(R.id.button2);
-        Button button3 = (Button) rootView.findViewById(R.id.button3);
+    @Override
+    public void onViewCreated(View view,Bundle savedInstanceState){
+        super.onViewCreated(view, savedInstanceState);
+
+        Button button1 = (Button) view.findViewById(R.id.button1);
+        Button button2 = (Button) view.findViewById(R.id.button2);
+        Button button3 = (Button) view.findViewById(R.id.button3);
 
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
         button3.setOnClickListener(this);
-
-        return rootView;
     }
 
     @Override
@@ -62,4 +66,12 @@ public class Fragment1 extends Fragment implements View.OnClickListener {
     public interface OnSelectedButtonListener {
         void onButtonSelected(int buttonIndex);
     }
+
+//    public static Fragment1 newInstance(int index) {
+//        Fragment1 F1 = new Fragment1();
+//        Bundle args = new Bundle();
+//        args.putInt(ARG_INDEX_BUTTON, index);
+//        F1.setArguments(args);
+//        return F1;
+//    }
 }
