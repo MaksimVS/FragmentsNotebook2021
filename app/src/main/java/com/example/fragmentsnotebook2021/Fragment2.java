@@ -30,6 +30,8 @@ public class Fragment2 extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+
         Bundle arguments = getArguments();
         if (arguments != null) {
             int buttonIndex = arguments.getInt(ARG_INDEX_DESCRIPTION);
@@ -37,7 +39,14 @@ public class Fragment2 extends Fragment {
             DescriptionArray = getResources().getStringArray(R.array.notes);
             setDescription(buttonIndex);
         }
+
+        if (savedInstanceState != null){
+                requireActivity()
+                        .getSupportFragmentManager()
+                        .popBackStack();
+        }
     }
+
 
     public void setDescription(int buttonIndex) {
 
